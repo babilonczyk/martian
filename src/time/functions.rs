@@ -70,10 +70,10 @@ fn get_current_utc_time() -> Option<Epoch> {
 }
 
 #[cfg(test)]
-fn get_current_utc_time() -> Epoch {
+fn get_current_utc_time() -> Option<Epoch> {
     // Curiosity Rover landing time
     let time = Epoch::from_gregorian_utc(2012, 8, 6, 5, 17, 57, 0);
-    time
+    Some(time)
 }
 
 #[cfg(test)]
@@ -82,7 +82,7 @@ mod tests {
 
     #[test]
     fn test_curiosity_mission_sol() {
-        let result = msd_now();
+        let result = msd_now().unwrap();
 
         // Cusriosity Rover Landing sol
         // Value taken from https://www.giss.nasa.gov/tools/mars24/
