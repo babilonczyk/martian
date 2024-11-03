@@ -1,10 +1,15 @@
-## martian - wip
+## martian
 
-The goal is to create a modular utility library centered around Mars.
+Modular utility library centered around Mars.
 
 ## Roadmap
 
 - [ ] time module
+  - [x] msd_now
+  - [ ] utc_to_msd
+  - [ ] msd_to_utc
+  - [ ] mtc_now
+  - [ ] ...
 - [ ] ...
 
 ## Licence
