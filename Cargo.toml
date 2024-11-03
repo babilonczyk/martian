@@ -1,10 +1,28 @@
 [package]
 name = "martian"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Jan Piotrzkowski <piotrzkowski.dev@gmail.com>"]
 license = "Apache-2.0"
 description = "A Rust library providing Mars centric utility modules."
 repository = "https://github.com/babilonczyk/martian"
+homepage = "https://github.com/babilonczyk/martian"
+readme = "README.md"
+keywords = ["astronomy", "utility", "date", "mars", "time"]
+categories = ["aerospace", "mars", "date-and-time", "space"]
+
+[lib]
+name = "martian"
+path = "src/lib.rs"
+crate-type = ["rlib"]
 
 [dependencies]
+hifitime = "4.0.0"
+thiserror = "1.0.66"
+
+[dev-dependencies]
+mockall = "0.13.0"
+
+[features]
+default = ["time"]
+time = []
