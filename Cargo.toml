@@ -9,7 +9,7 @@ repository = "https://github.com/babilonczyk/martian"
 homepage = "https://github.com/babilonczyk/martian"
 readme = "README.md"
 keywords = ["astronomy", "utility", "date", "mars", "time"]
-categories = ["aerospace", "mars", "date-and-time", "space"]
+categories = ["aerospace", "date-and-time", "science"]
 
 [lib]
 name = "martian"
