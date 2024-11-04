@@ -1,10 +1,10 @@
 [package]
 name = "martian"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Jan Piotrzkowski <piotrzkowski.dev@gmail.com>"]
 license = "Apache-2.0"
-description = "A Rust library providing Mars centric utility modules."
+description = "A Rust library providing Mars centric utility modules like: time etc."
 repository = "https://github.com/babilonczyk/martian"
 homepage = "https://github.com/babilonczyk/martian"
 readme = "README.md"
