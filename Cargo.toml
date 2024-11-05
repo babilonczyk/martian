@@ -8,8 +8,8 @@ description = "A Rust library providing Mars centric utility modules like: time 
 repository = "https://github.com/babilonczyk/martian"
 homepage = "https://github.com/babilonczyk/martian"
 readme = "README.md"
-keywords = ["astronomy", "utility", "date", "mars", "time"]
-categories = ["aerospace", "date-and-time", "science"]
+keywords = ["astronomy", "utility", "date-time", "mars", "time"]
+categories = ["aerospace", "date-and-time", "science", "internationalization"]
 
 [lib]
 name = "martian"
@@ -17,9 +17,10 @@ path = "src/lib.rs"
 crate-type = ["rlib"]
 
 [dependencies]
-hifitime = "4.0.0"
-thiserror = "1.0.66"
+hifitime = { version = "4.0.0", optional = true }
+thiserror = { version = "1.0.67", optional = true }
+regex = { version = "1.11.1", optional = true }
 
 [features]
 default = ["time"]
-time = []
+time = ["hifitime", "thiserror", "regex"]
