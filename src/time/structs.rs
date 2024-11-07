@@ -27,8 +27,8 @@ pub enum TimeError {
     #[error("Provided date does not match the ISO8601 format. Eg. 2021-08-06T05:17:57.000")]
     ISO8601FormatError,
 
-    /// Cannot provide an UTC date below Sol 0 (1873-12-29T00:00:00.000 UTC).
-    #[error("Cannot provide an UTC date below Sol 0 (1873-12-29T00:00:00.000 UTC).")]
+    /// Cannot provide a date below Sol 0 (1873-12-29T00:00:00.000 UTC).
+    #[error("Cannot provide a date below Sol 0 (1873-12-29T00:00:00.000 UTC).")]
     DateBelowSolZeroError,
 }
 
