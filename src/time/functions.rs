@@ -252,12 +252,26 @@ mod utc_to_msd_tests {
 
         assert!(
             (result_basic - curiosity_landing_sol).abs() < 0.01,
-            "UTC to MSD calculation is off for Curiosity mission Sol 0"
+            "UTC to MSD calculation is off for Curiosity mission Sol 0 by {:.7}",
+            result_basic - curiosity_landing_sol
         );
 
         assert!(
             (result_advanced - curiosity_landing_sol).abs() < 0.01,
-            "UTC to MSD calculation is off for Curiosity mission Sol 0"
+            "UTC to MSD calculation is off for Curiosity mission Sol 0 by {:.7}",
+            result_advanced - curiosity_landing_sol
+        );
+
+        // Test on more accurate value
+        let date_time = "2024-11-07T17:58:40.000";
+        let msd = 53626.0011;
+
+        let result = utc_to_msd(date_time, false).unwrap();
+
+        assert!(
+            (result - msd).abs() < 0.00001,
+            "UTC to MSD calculation is off for Curiosity mission Sol 0 by {:.7}",
+            result - msd
         );
     }
 
