@@ -1,5 +1,6 @@
 use hifitime::{ Epoch, Duration };
 use crate::time::structs::*;
+use crate::time::errors::*;
 use regex::Regex;
 use crate::time::constants::{
     JD_ON_SOL_ZERO,
@@ -8,6 +9,7 @@ use crate::time::constants::{
     MIN_SOL_YEAR,
     MIN_SOL_MONTH,
     MIN_SOL_DAY,
+    DARIAN_MONTH_LENGTHS,
 };
 
 // ------------------------------------------------------------------------------------------------
