@@ -5,9 +5,9 @@ use crate::time::constants::{
     JD_ON_SOL_ZERO,
     SOL_IN_EARTH_DAYS,
     ISO8601_REGEX,
-    MIN_YEAR,
-    MIN_MONTH,
-    MIN_DAY,
+    MIN_SOL_YEAR,
+    MIN_SOL_MONTH,
+    MIN_SOL_DAY,
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ pub fn utc_to_msd(datetime: &str) -> Result<f64, TimeError> {
     let regex = Regex::new(ISO8601_REGEX).map_err(|_| TimeError::ISO8601FormatError)?;
     let regex_result = regex.captures(datetime).ok_or(TimeError::ISO8601FormatError)?;
 
-    let year = validate_regex_value(regex_result.get(1), 0, i32::MAX)?; // Didn't set min to MIN_YEAR to get more meaningfull error when validating whole YYYY-MM-DD
+    let year = validate_regex_value(regex_result.get(1), 0, i32::MAX)?; // Didn't set min to MIN_SOL_YEAR to get more meaningfull error when validating whole YYYY-MM-DD
     let month = validate_regex_value(regex_result.get(2), 1, 12)?;
     let day = validate_regex_value(regex_result.get(3), 1, 31)?; // TODO: Validate days per month
 
@@ -162,12 +162,12 @@ fn validate_regex_value<T: std::str::FromStr>(
 }
 
 fn validate_date(year: i32, month: u8, day: u8) -> Result<(), TimeError> {
-    if year < MIN_YEAR {
+    if year < MIN_SOL_YEAR {
         Err(TimeError::DateBelowSolZeroError)
-    } else if year == MIN_YEAR {
-        if month < MIN_MONTH {
+    } else if year == MIN_SOL_YEAR {
+        if month < MIN_SOL_MONTH {
             Err(TimeError::DateBelowSolZeroError)
-        } else if month == MIN_MONTH && day < MIN_DAY {
+        } else if month == MIN_SOL_MONTH && day < MIN_SOL_DAY {
             Err(TimeError::DateBelowSolZeroError)
         } else {
             Ok(())
