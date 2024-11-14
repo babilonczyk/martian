@@ -196,7 +196,7 @@ mod utc_to_msd_tests {
 
     #[test]
     fn test_utc_to_msd_invalid_date_format() {
-        let date_time = "21-08-06T05:17:57.000";
+        let date_time = "21-11108-06T05:17:57.000";
         let result = utc_to_msd(date_time);
 
         assert_eq!(result.unwrap_err(), TimeError::ISO8601FormatError);
