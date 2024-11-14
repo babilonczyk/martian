@@ -1,4 +1,4 @@
-use crate::errors;
+use thiserror::Error;
 
 // ------------------------------------------------------------------------------------------------
 /// Errors that can occur while performing time-related operations.
