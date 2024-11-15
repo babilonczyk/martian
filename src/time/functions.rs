@@ -1,9 +1,9 @@
-use hifitime::{ Epoch, Duration };
-use crate::time::structs::*;
-use crate::time::errors::*;
-use regex::Regex;
-use crate::time::constants::{ JD_ON_SOL_ZERO, SOL_IN_EARTH_DAYS };
 use crate::{ ISO8601_REGEX };
+use crate::time::constants::{ JD_ON_SOL_ZERO, SOL_IN_EARTH_DAYS };
+use crate::time::errors::*;
+use crate::time::structs::*;
+use hifitime::{ Epoch, Duration };
+use regex::Regex;
 
 // ------------------------------------------------------------------------------------------------
 /// Get current Sol (MSD) on Mars.

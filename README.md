@@ -15,7 +15,7 @@ Major version is a breaking change that will make previous stable modules incomp
 
 ## Stable Modules
 
-None as of yet. Currently working on `time` and `date`.
+- Time module
 
 ## Roadmap
 
