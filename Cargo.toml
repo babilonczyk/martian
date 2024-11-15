@@ -4,11 +4,11 @@ version = "0.2.0"
 edition = "2021"
 authors = ["Jan Piotrzkowski <piotrzkowski.dev@gmail.com>"]
 license = "Apache-2.0"
-description = "A Rust library providing Mars centric utility modules like: time etc."
+description = "A Rust library providing Mars centric utility modules like: time, date etc."
 repository = "https://github.com/babilonczyk/martian"
 homepage = "https://github.com/babilonczyk/martian"
 readme = "README.md"
-keywords = ["astronomy", "utility", "date-time", "mars", "time"]
+keywords = ["astronomy", "utility", "date-time", "mars", "darian"]
 categories = ["aerospace", "date-and-time", "science", "internationalization"]
 
 [lib]

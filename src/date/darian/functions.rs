@@ -89,6 +89,10 @@ mod darian_now_tests {
 ///
 /// let msd = 53626.0011;
 ///
+/// let darian_date = msd_to_darian(msd).unwrap();
+/// println!("Darian Date: {}", darian_date);
+/// ```
+///
 
 pub fn msd_to_darian(msd: f64) -> Result<DarianDate, DateError> {
     // Adjust the MSD to the Darian calendar starting point
