@@ -2,7 +2,8 @@ use hifitime::{ Epoch, Duration };
 use crate::time::structs::*;
 use crate::time::errors::*;
 use regex::Regex;
-use crate::time::constants::{ JD_ON_SOL_ZERO, SOL_IN_EARTH_DAYS, ISO8601_REGEX };
+use crate::time::constants::{ JD_ON_SOL_ZERO, SOL_IN_EARTH_DAYS };
+use crate::{ ISO8601_REGEX };
 
 // ------------------------------------------------------------------------------------------------
 /// Get current Sol (MSD) on Mars.
@@ -227,6 +228,10 @@ mod utc_to_msd_tests {
 ///     Err(e) => eprintln!("Error calculating UTC: {}", e),
 /// }
 /// ```
+///
+/// # Note
+///
+/// Dates before 1972 will not account for leap seconds.
 
 pub fn msd_to_utc(msd: f64) -> Result<String, TimeError> {
     let jd_tdb = msd * SOL_IN_EARTH_DAYS + JD_ON_SOL_ZERO;

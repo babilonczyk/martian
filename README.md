@@ -10,7 +10,8 @@ Once the minor version gets changed to to the new one, we can consider the previ
 
 Major version is a breaking change that will make previous stable modules incompatible with new implementation.
 
-- Version `0.1.x` - Time and Date modules
+- Version `0.1.x` - Time module
+- Version `0.2.x` - Date module
 
 ## Stable Modules
 
@@ -22,15 +23,18 @@ If you have ideas for a valid and bringing business value modules/functions. Ple
 
 Time:
 
-- [x] current_sol/msd_now
+- [x] msd_now/current_sol
 - [x] mtc_now
 - [x] utc_to_msd
 - [x] msd_to_utc
-- [ ] darian_now (Current date based on Darian calendar)
+
+Date:
+
+- [x] darian_now
+- [x] msd_to_darian
+- [ ] darian_to_msd
 - [ ] darian_to_utc
 - [ ] utc_to_darian
-- [ ] darian_to_sol
-- [ ] sol_to_darian
 
 ## Licence
 
