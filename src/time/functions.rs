@@ -122,8 +122,7 @@ pub fn utc_to_msd(datetime: &str) -> Result<f64, TimeError> {
 
     // MSD = (JD_TDB - JD_ON_SOL_ZERO) / SOL_IN_EARTH_DAYS
     let jde_tt = utc.to_jde_tt_days();
-
-    let msd: f64 = (jde_tt - 2405522.0028779) / 1.0274912517;
+    let msd: f64 = (jde_tt - JD_ON_SOL_ZERO) / SOL_IN_EARTH_DAYS;
 
     if msd.is_finite() {
         return Ok(msd);
